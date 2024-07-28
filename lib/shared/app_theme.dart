@@ -19,6 +19,19 @@ class AppTheme {
           fontSize: responsiveNess.bodyLargeFontSize(),
         ),
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          padding: WidgetStateProperty.all(
+            const EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 20,
+            ),
+          ),
+          textStyle: WidgetStateProperty.all(
+            Theme.of(context).textTheme.headlineMedium,
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
 import 'package:pratik_portfolio/features/landing/ui/landing_page.dart';
+import 'package:pratik_portfolio/shared/app_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -36,6 +39,15 @@ class HomePage extends StatelessWidget {
             Text(
               '''If you are seeking a top-rated freelancer with a proven track record of success, look no further. Let's embark on a journey together, where your vision becomes a reality. Get in touch with me today, and let's bring your projects to new heights!''',
               style: Theme.of(context).textTheme.bodyLarge,
+            ),
+
+            // This is the button that will navigate to the contact us page
+            const SizedBox(height: 20),
+            AppButton(
+              text: 'Contact Me',
+              onPressed: () {
+                context.read<LandingCubit>().changeIndex(3);
+              },
             ),
           ],
         ),

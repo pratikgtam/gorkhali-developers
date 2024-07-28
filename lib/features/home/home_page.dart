@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pratik_portfolio/features/landing/ui/landing_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,29 +8,37 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height - kBottomNavigationBarHeight,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'HEY THERE!',
-            style: Theme.of(context).textTheme.headlineLarge,
-          ),
-          const SizedBox(height: 20),
-          RichText(
-            text: TextSpan(
-              text: 'I am ',
+      child: Responsiveness(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'HEY THERE!',
               style: Theme.of(context).textTheme.headlineMedium,
-              children: [
-                TextSpan(
-                  text: 'Pratik'.toUpperCase(),
-                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.tertiary,
-                      ),
-                ),
-              ],
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+            RichText(
+              text: TextSpan(
+                text: 'I am ',
+                style: Theme.of(context).textTheme.headlineMedium,
+                children: [
+                  TextSpan(
+                    text: 'Pratik'.toUpperCase(),
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                          color: Theme.of(context).colorScheme.tertiary,
+                        ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              '''If you are seeking a top-rated freelancer with a proven track record of success, look no further. Let's embark on a journey together, where your vision becomes a reality. Get in touch with me today, and let's bring your projects to new heights!''',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ],
+        ),
       ),
     );
   }

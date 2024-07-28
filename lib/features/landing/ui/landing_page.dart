@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
 import 'package:pratik_portfolio/shared/app_responsiveness.dart';
+import 'package:pratik_portfolio/shared/constatnts.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = AppResponsiveness.isMobile(context);
+    final isMobile = AppResponsiveness(context: context).isMobile();
     List<NavigationRailDestination> destinations = [
       const NavigationRailDestination(
         icon: Icon(Icons.home_outlined),
@@ -59,7 +60,11 @@ class LandingPage extends StatelessWidget {
                 backgroundColor: Colors.white,
                 destinations: destinations,
               ),
-            Expanded(child: SingleChildScrollView(child: body)),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(AppConstants.defaultPadding),
+              child: body,
+            )),
 
             // body,
           ],

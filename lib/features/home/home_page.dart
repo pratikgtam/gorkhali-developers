@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
-import 'package:pratik_portfolio/features/landing/ui/landing_page.dart';
 import 'package:pratik_portfolio/shared/app_button.dart';
+import 'package:pratik_portfolio/shared/app_navigation_rail.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
             // This is the button that will navigate to the contact us page
             const SizedBox(height: 20),
             AppButton(
-              text: 'Contact Me',
+              text: 'Get started now',
               onPressed: () {
                 context.read<LandingCubit>().changePage(3);
               },

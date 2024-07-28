@@ -29,7 +29,7 @@ class AppTheme {
           ),
           textStyle: WidgetStateProperty.all(
             TextStyle(
-              fontSize: responsiveNess.headlineMediumFontSize(),
+              fontSize: responsiveNess.bodyLargeFontSize(),
               fontWeight: FontWeight.bold,
             ),
           ),

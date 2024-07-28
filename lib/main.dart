@@ -1,9 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pratik_portfolio/features/landing/ui/landing_page.dart';
+import 'package:pratik_portfolio/firebase_options.dart';
 import 'package:pratik_portfolio/shared/app_theme.dart';
 import 'package:pratik_portfolio/shared/global_providers.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

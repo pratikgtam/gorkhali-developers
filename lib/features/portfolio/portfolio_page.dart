@@ -19,20 +19,23 @@ class _PortfolioPageState extends State<PortfolioPage> {
   @override
   Widget build(BuildContext context) {
     final portfolios = context.watch<PortfolioCubit>().state.portfolioList;
-    return ListView.separated(
-      itemCount: portfolios.length,
-      scrollDirection: Axis.horizontal,
-      separatorBuilder: (BuildContext context, int index) {
-        return const SizedBox(height: 20);
-      },
-      itemBuilder: (BuildContext context, int index) {
-        return Card(
-          child: ListTile(
-            title: Text(portfolios[index].title),
-            leading: Image.network(portfolios[index].imageUrl),
-          ),
-        );
-      },
+    return SizedBox(
+      height: 200,
+      child: ListView.separated(
+        itemCount: portfolios.length,
+        scrollDirection: Axis.horizontal,
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(height: 20);
+        },
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            child: ListTile(
+              title: Text(portfolios[index].title),
+              leading: Image.network(portfolios[index].image),
+            ),
+          );
+        },
+      ),
     );
   }
 }

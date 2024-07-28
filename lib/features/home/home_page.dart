@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
             AppButton(
               text: 'Contact Me',
               onPressed: () {
-                context.read<LandingCubit>().changeIndex(3);
+                context.read<LandingCubit>().changePage(3);
               },
             ),
           ],

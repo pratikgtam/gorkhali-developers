@@ -23,12 +23,15 @@ class AppTheme {
         style: ButtonStyle(
           padding: WidgetStateProperty.all(
             const EdgeInsets.symmetric(
-              horizontal: 30,
+              horizontal: 50,
               vertical: 20,
             ),
           ),
           textStyle: WidgetStateProperty.all(
-            Theme.of(context).textTheme.headlineMedium,
+            TextStyle(
+              fontSize: responsiveNess.headlineMediumFontSize(),
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),

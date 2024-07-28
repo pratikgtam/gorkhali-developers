@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LandingState {
-  int get currentIndex => throw _privateConstructorUsedError;
+  LandingPageItems get landingPage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LandingStateCopyWith<LandingState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $LandingStateCopyWith<$Res> {
           LandingState value, $Res Function(LandingState) then) =
       _$LandingStateCopyWithImpl<$Res, LandingState>;
   @useResult
-  $Res call({int currentIndex});
+  $Res call({LandingPageItems landingPage});
 }
 
 /// @nodoc
@@ -45,13 +45,13 @@ class _$LandingStateCopyWithImpl<$Res, $Val extends LandingState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentIndex = null,
+    Object? landingPage = null,
   }) {
     return _then(_value.copyWith(
-      currentIndex: null == currentIndex
-          ? _value.currentIndex
-          : currentIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      landingPage: null == landingPage
+          ? _value.landingPage
+          : landingPage // ignore: cast_nullable_to_non_nullable
+              as LandingPageItems,
     ) as $Val);
   }
 }
@@ -64,7 +64,7 @@ abstract class _$$LandingStateImplCopyWith<$Res>
       __$$LandingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int currentIndex});
+  $Res call({LandingPageItems landingPage});
 }
 
 /// @nodoc
@@ -78,13 +78,13 @@ class __$$LandingStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentIndex = null,
+    Object? landingPage = null,
   }) {
     return _then(_$LandingStateImpl(
-      currentIndex: null == currentIndex
-          ? _value.currentIndex
-          : currentIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      landingPage: null == landingPage
+          ? _value.landingPage
+          : landingPage // ignore: cast_nullable_to_non_nullable
+              as LandingPageItems,
     ));
   }
 }
@@ -92,15 +92,16 @@ class __$$LandingStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LandingStateImpl extends _LandingState {
-  const _$LandingStateImpl({this.currentIndex = 0}) : super._();
+  const _$LandingStateImpl({this.landingPage = LandingPageItems.home})
+      : super._();
 
   @override
   @JsonKey()
-  final int currentIndex;
+  final LandingPageItems landingPage;
 
   @override
   String toString() {
-    return 'LandingState(currentIndex: $currentIndex)';
+    return 'LandingState(landingPage: $landingPage)';
   }
 
   @override
@@ -108,12 +109,12 @@ class _$LandingStateImpl extends _LandingState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LandingStateImpl &&
-            (identical(other.currentIndex, currentIndex) ||
-                other.currentIndex == currentIndex));
+            (identical(other.landingPage, landingPage) ||
+                other.landingPage == landingPage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentIndex);
+  int get hashCode => Object.hash(runtimeType, landingPage);
 
   @JsonKey(ignore: true)
   @override
@@ -123,11 +124,12 @@ class _$LandingStateImpl extends _LandingState {
 }
 
 abstract class _LandingState extends LandingState {
-  const factory _LandingState({final int currentIndex}) = _$LandingStateImpl;
+  const factory _LandingState({final LandingPageItems landingPage}) =
+      _$LandingStateImpl;
   const _LandingState._() : super._();
 
   @override
-  int get currentIndex;
+  LandingPageItems get landingPage;
   @override
   @JsonKey(ignore: true)
   _$$LandingStateImplCopyWith<_$LandingStateImpl> get copyWith =>

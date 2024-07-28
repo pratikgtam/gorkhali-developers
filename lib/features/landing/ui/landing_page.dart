@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
@@ -11,6 +10,8 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = AppResponsiveness(context: context).isMobile();
+    final currentItem =
+        context.select((LandingCubit cubit) => cubit.state.landingPage);
     List<NavigationRailDestination> destinations = [
       const NavigationRailDestination(
         icon: Icon(Icons.home_outlined),
@@ -30,45 +31,34 @@ class LandingPage extends StatelessWidget {
       const NavigationRailDestination(
         icon: Icon(Icons.contact_page_outlined),
         selectedIcon: Icon(Icons.contact_page),
-        label: Text('Contact Us'),
+        label: Text('Contact Me'),
       ),
     ];
-    final body = context.select((LandingCubit cubit) => cubit.state.body);
-    return Scaffold(
-      body: Listener(
-        onPointerSignal: (event) {
-          if (event is PointerScrollEvent) {
-            if (event.scrollDelta.dy.isNegative) {
-              context.read<LandingCubit>().decrementIndex();
-            } else {
-              context.read<LandingCubit>().incrementIndex();
-            }
-          }
-        },
-        child: Row(
-          children: [
-            if (!isMobile)
-              NavigationRail(
-                labelType: NavigationRailLabelType.all,
-                groupAlignment: 0.0,
-                minWidth: 100,
-                selectedIndex: context
-                    .select((LandingCubit cubit) => cubit.state.currentIndex),
-                onDestinationSelected: (value) {
-                  context.read<LandingCubit>().changeIndex(value);
-                },
-                backgroundColor: Colors.white,
-                destinations: destinations,
-              ),
-            Expanded(
-                child: Padding(
-              padding: const EdgeInsets.all(AppConstants.defaultPadding),
-              child: body,
-            )),
 
-            // body,
-          ],
-        ),
+    return Scaffold(
+      body: Row(
+        children: [
+          if (!isMobile)
+            NavigationRail(
+              labelType: NavigationRailLabelType.all,
+              groupAlignment: 0.0,
+              minWidth: 100,
+              selectedIndex: context.select(
+                  (LandingCubit cubit) => cubit.state.landingPage.index),
+              onDestinationSelected: (value) {
+                context.read<LandingCubit>().changePage(value);
+              },
+              backgroundColor: Colors.white,
+              destinations: destinations,
+            ),
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.all(AppConstants.defaultPadding),
+            child: currentItem.page,
+          )),
+
+          // body,
+        ],
       ),
     );
   }

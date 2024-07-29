@@ -21,15 +21,9 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -60,4 +54,22 @@ class DefaultFirebaseOptions {
     authDomain: 'pratikgtam-portfolio.firebaseapp.com',
     storageBucket: 'pratikgtam-portfolio.appspot.com',
   );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBOyoWm2wkRcnQcZOF6O0tmLRcxgWowms8',
+    appId: '1:180007109812:ios:883c8fca59480514e8c3e1',
+    messagingSenderId: '180007109812',
+    projectId: 'pratikgtam-portfolio',
+    storageBucket: 'pratikgtam-portfolio.appspot.com',
+    iosBundleId: 'com.example.pratikPortfolio',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyB0DGJFjwMpk_H-fW3SngxyiDnIgAZG6OI',
+    appId: '1:180007109812:android:7e69a1e024276c40e8c3e1',
+    messagingSenderId: '180007109812',
+    projectId: 'pratikgtam-portfolio',
+    storageBucket: 'pratikgtam-portfolio.appspot.com',
+  );
+
 }

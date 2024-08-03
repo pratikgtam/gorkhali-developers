@@ -9,12 +9,14 @@ part of 'portfolio_model.dart';
 _$PortfolioModelImpl _$$PortfolioModelImplFromJson(Map<String, dynamic> json) =>
     _$PortfolioModelImpl(
       title: json['title'] as String,
-      image: json['image'] as String,
+      imageUrl: json['imageUrl'] as String,
+      description: json['description'] as String,
     );
 
 Map<String, dynamic> _$$PortfolioModelImplToJson(
         _$PortfolioModelImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'image': instance.image,
+      'imageUrl': instance.imageUrl,
+      'description': instance.description,
     };

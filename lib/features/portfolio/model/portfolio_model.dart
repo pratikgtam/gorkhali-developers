@@ -7,7 +7,8 @@ part 'portfolio_model.g.dart';
 class PortfolioModel with _$PortfolioModel {
   factory PortfolioModel({
     required String title,
-    required String image,
+    required String imageUrl,
+    required String description,
   }) = _PortfolioModel;
 
   factory PortfolioModel.fromJson(Map<String, dynamic> json) =>

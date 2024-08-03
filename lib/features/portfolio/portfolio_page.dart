@@ -28,10 +28,16 @@ class _PortfolioPageState extends State<PortfolioPage> {
           return const SizedBox(height: 20);
         },
         itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: ListTile(
-              title: Text(portfolios[index].title),
-              leading: Image.network(portfolios[index].image),
+          final portfolio = portfolios[index];
+          return Center(
+            child: SizedBox(
+              width: 200,
+              child: Card(
+                child: ListTile(
+                  title: Text(portfolio.title),
+                  leading: Image.network(portfolio.imageUrl),
+                ),
+              ),
             ),
           );
         },

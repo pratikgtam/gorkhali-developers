@@ -21,7 +21,8 @@ PortfolioModel _$PortfolioModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PortfolioModel {
   String get title => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $PortfolioModelCopyWith<$Res> {
           PortfolioModel value, $Res Function(PortfolioModel) then) =
       _$PortfolioModelCopyWithImpl<$Res, PortfolioModel>;
   @useResult
-  $Res call({String title, String image});
+  $Res call({String title, String imageUrl, String description});
 }
 
 /// @nodoc
@@ -52,16 +53,21 @@ class _$PortfolioModelCopyWithImpl<$Res, $Val extends PortfolioModel>
   @override
   $Res call({
     Object? title = null,
-    Object? image = null,
+    Object? imageUrl = null,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -75,7 +81,7 @@ abstract class _$$PortfolioModelImplCopyWith<$Res>
       __$$PortfolioModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, String image});
+  $Res call({String title, String imageUrl, String description});
 }
 
 /// @nodoc
@@ -90,16 +96,21 @@ class __$$PortfolioModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = null,
-    Object? image = null,
+    Object? imageUrl = null,
+    Object? description = null,
   }) {
     return _then(_$PortfolioModelImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -108,7 +119,8 @@ class __$$PortfolioModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PortfolioModelImpl implements _PortfolioModel {
-  _$PortfolioModelImpl({required this.title, required this.image});
+  _$PortfolioModelImpl(
+      {required this.title, required this.imageUrl, required this.description});
 
   factory _$PortfolioModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PortfolioModelImplFromJson(json);
@@ -116,11 +128,13 @@ class _$PortfolioModelImpl implements _PortfolioModel {
   @override
   final String title;
   @override
-  final String image;
+  final String imageUrl;
+  @override
+  final String description;
 
   @override
   String toString() {
-    return 'PortfolioModel(title: $title, image: $image)';
+    return 'PortfolioModel(title: $title, imageUrl: $imageUrl, description: $description)';
   }
 
   @override
@@ -129,12 +143,15 @@ class _$PortfolioModelImpl implements _PortfolioModel {
         (other.runtimeType == runtimeType &&
             other is _$PortfolioModelImpl &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, image);
+  int get hashCode => Object.hash(runtimeType, title, imageUrl, description);
 
   @JsonKey(ignore: true)
   @override
@@ -154,7 +171,8 @@ class _$PortfolioModelImpl implements _PortfolioModel {
 abstract class _PortfolioModel implements PortfolioModel {
   factory _PortfolioModel(
       {required final String title,
-      required final String image}) = _$PortfolioModelImpl;
+      required final String imageUrl,
+      required final String description}) = _$PortfolioModelImpl;
 
   factory _PortfolioModel.fromJson(Map<String, dynamic> json) =
       _$PortfolioModelImpl.fromJson;
@@ -162,7 +180,9 @@ abstract class _PortfolioModel implements PortfolioModel {
   @override
   String get title;
   @override
-  String get image;
+  String get imageUrl;
+  @override
+  String get description;
   @override
   @JsonKey(ignore: true)
   _$$PortfolioModelImplCopyWith<_$PortfolioModelImpl> get copyWith =>

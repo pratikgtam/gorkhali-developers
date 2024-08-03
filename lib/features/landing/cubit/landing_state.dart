@@ -6,7 +6,7 @@ part 'landing_state.freezed.dart';
 @freezed
 class LandingState with _$LandingState {
   const factory LandingState({
-    @Default(LandingPageItems.home) LandingPageItems landingPage,
+    @Default(LandingPageItems.portfolio) LandingPageItems landingPage,
   }) = _LandingState;
 
   const LandingState._();

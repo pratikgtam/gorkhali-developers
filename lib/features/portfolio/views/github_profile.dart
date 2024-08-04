@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pratik_portfolio/features/portfolio/cubit/protfolio_cubit.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class GitHubProfileScreen extends StatelessWidget {
-  final Map<String, dynamic> profileData = {
-    "login": "pratikgtam",
-    "avatar_url": "https://avatars.githubusercontent.com/u/36621515?v=4",
-    "html_url": "https://github.com/pratikgtam",
-    "name": "Pratik Gautam",
-    "location": "Barrie, Ontario, Canada",
-    "bio": "Software Developer",
-    "public_repos": 108,
-    "public_gists": 37,
-    "followers": 8,
-    "following": 10,
-  };
-
-  GitHubProfileScreen({super.key});
+  const GitHubProfileScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final profile = context.watch<PortfolioCubit>().state.githubProfile;
+    if (profile == null) {
+      return const SizedBox();
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -38,19 +31,19 @@ class GitHubProfileScreen extends StatelessWidget {
                 Center(
                   child: CircleAvatar(
                     radius: 50,
-                    backgroundImage: NetworkImage(profileData['avatar_url']),
+                    backgroundImage: NetworkImage(profile.avatarUrl ?? ''),
                   ),
                 ),
                 const SizedBox(height: 20),
                 Center(
                   child: Text(
-                    profileData['name'] ?? profileData['login'],
+                    profile.name ?? profile.login ?? 'Pratik',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
                 Center(
                   child: Text(
-                    profileData['location'] ?? 'Location not available',
+                    profile.location ?? 'Toronto, Canada',
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
@@ -59,9 +52,8 @@ class GitHubProfileScreen extends StatelessWidget {
                   'Bio:',
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                const SizedBox(height: 5),
                 Text(
-                  profileData['bio'] ?? 'No bio available',
+                  profile.bio ?? 'No bio available',
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 const SizedBox(height: 20),
@@ -74,20 +66,20 @@ class GitHubProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _buildStatCard('Repositories',
-                        profileData['public_repos'].toString(), context),
+                        profile.publicRepos.toString() ?? '0', context),
                     _buildStatCard('Gists',
-                        profileData['public_gists'].toString(), context),
+                        profile.publicGists.toString() ?? '0', context),
                     _buildStatCard('Followers',
-                        profileData['followers'].toString(), context),
+                        profile.followers.toString() ?? '0', context),
                     _buildStatCard('Following',
-                        profileData['following'].toString(), context),
+                        profile.following.toString() ?? '0', context),
                   ],
                 ),
                 const SizedBox(height: 30),
                 Center(
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      launchUrlString(profileData['html_url']);
+                      launchUrlString(profile.htmlUrl ?? '');
                     },
                     icon: const Icon(Icons.open_in_browser),
                     label: const Text('View on GitHub'),

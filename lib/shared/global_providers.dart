@@ -1,7 +1,9 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
 import 'package:pratik_portfolio/features/portfolio/cubit/protfolio_cubit.dart';
+import 'package:pratik_portfolio/features/portfolio/repository/portfolio_repository.dart';
 import 'package:pratik_portfolio/shared/supabase/supabase_repository.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -16,8 +18,14 @@ class GlobalProviders extends StatelessWidget {
         RepositoryProvider<SupabaseClient>(
           create: (context) => Supabase.instance.client,
         ),
+        RepositoryProvider<Dio>(
+          create: (context) => Dio(),
+        ),
         RepositoryProvider<SupabaseRepository>(
           create: (context) => SupabaseRepository(context.read()),
+        ),
+        RepositoryProvider<PortfolioRepository>(
+          create: (context) => PortfolioRepository(context.read()),
         ),
       ],
       child: MultiBlocProvider(
@@ -26,7 +34,7 @@ class GlobalProviders extends StatelessWidget {
             create: (context) => LandingCubit(),
           ),
           BlocProvider(
-            create: (context) => PortfolioCubit(context.read()),
+            create: (context) => PortfolioCubit(context.read(), context.read()),
           ),
         ],
         child: child,

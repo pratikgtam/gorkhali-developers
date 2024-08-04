@@ -92,7 +92,7 @@ class __$$LandingStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LandingStateImpl extends _LandingState {
-  const _$LandingStateImpl({this.landingPage = LandingPageItems.myServices})
+  const _$LandingStateImpl({this.landingPage = LandingPageItems.home})
       : super._();
 
   @override

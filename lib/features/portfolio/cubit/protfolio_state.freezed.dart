@@ -21,6 +21,7 @@ PortfolioState _$PortfolioStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PortfolioState {
   List<PortfolioModel> get portfolioList => throw _privateConstructorUsedError;
+  GitHubProfileModel? get githubProfile => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +36,12 @@ abstract class $PortfolioStateCopyWith<$Res> {
           PortfolioState value, $Res Function(PortfolioState) then) =
       _$PortfolioStateCopyWithImpl<$Res, PortfolioState>;
   @useResult
-  $Res call({List<PortfolioModel> portfolioList, bool isLoading});
+  $Res call(
+      {List<PortfolioModel> portfolioList,
+      GitHubProfileModel? githubProfile,
+      bool isLoading});
+
+  $GitHubProfileModelCopyWith<$Res>? get githubProfile;
 }
 
 /// @nodoc
@@ -52,6 +58,7 @@ class _$PortfolioStateCopyWithImpl<$Res, $Val extends PortfolioState>
   @override
   $Res call({
     Object? portfolioList = null,
+    Object? githubProfile = freezed,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
@@ -59,11 +66,27 @@ class _$PortfolioStateCopyWithImpl<$Res, $Val extends PortfolioState>
           ? _value.portfolioList
           : portfolioList // ignore: cast_nullable_to_non_nullable
               as List<PortfolioModel>,
+      githubProfile: freezed == githubProfile
+          ? _value.githubProfile
+          : githubProfile // ignore: cast_nullable_to_non_nullable
+              as GitHubProfileModel?,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GitHubProfileModelCopyWith<$Res>? get githubProfile {
+    if (_value.githubProfile == null) {
+      return null;
+    }
+
+    return $GitHubProfileModelCopyWith<$Res>(_value.githubProfile!, (value) {
+      return _then(_value.copyWith(githubProfile: value) as $Val);
+    });
   }
 }
 
@@ -75,7 +98,13 @@ abstract class _$$PortfolioStateImplCopyWith<$Res>
       __$$PortfolioStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<PortfolioModel> portfolioList, bool isLoading});
+  $Res call(
+      {List<PortfolioModel> portfolioList,
+      GitHubProfileModel? githubProfile,
+      bool isLoading});
+
+  @override
+  $GitHubProfileModelCopyWith<$Res>? get githubProfile;
 }
 
 /// @nodoc
@@ -90,6 +119,7 @@ class __$$PortfolioStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? portfolioList = null,
+    Object? githubProfile = freezed,
     Object? isLoading = null,
   }) {
     return _then(_$PortfolioStateImpl(
@@ -97,6 +127,10 @@ class __$$PortfolioStateImplCopyWithImpl<$Res>
           ? _value._portfolioList
           : portfolioList // ignore: cast_nullable_to_non_nullable
               as List<PortfolioModel>,
+      githubProfile: freezed == githubProfile
+          ? _value.githubProfile
+          : githubProfile // ignore: cast_nullable_to_non_nullable
+              as GitHubProfileModel?,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -110,6 +144,7 @@ class __$$PortfolioStateImplCopyWithImpl<$Res>
 class _$PortfolioStateImpl implements _PortfolioState {
   _$PortfolioStateImpl(
       {final List<PortfolioModel> portfolioList = const <PortfolioModel>[],
+      this.githubProfile,
       this.isLoading = false})
       : _portfolioList = portfolioList;
 
@@ -126,12 +161,14 @@ class _$PortfolioStateImpl implements _PortfolioState {
   }
 
   @override
+  final GitHubProfileModel? githubProfile;
+  @override
   @JsonKey()
   final bool isLoading;
 
   @override
   String toString() {
-    return 'PortfolioState(portfolioList: $portfolioList, isLoading: $isLoading)';
+    return 'PortfolioState(portfolioList: $portfolioList, githubProfile: $githubProfile, isLoading: $isLoading)';
   }
 
   @override
@@ -141,14 +178,19 @@ class _$PortfolioStateImpl implements _PortfolioState {
             other is _$PortfolioStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._portfolioList, _portfolioList) &&
+            (identical(other.githubProfile, githubProfile) ||
+                other.githubProfile == githubProfile) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_portfolioList), isLoading);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_portfolioList),
+      githubProfile,
+      isLoading);
 
   @JsonKey(ignore: true)
   @override
@@ -168,6 +210,7 @@ class _$PortfolioStateImpl implements _PortfolioState {
 abstract class _PortfolioState implements PortfolioState {
   factory _PortfolioState(
       {final List<PortfolioModel> portfolioList,
+      final GitHubProfileModel? githubProfile,
       final bool isLoading}) = _$PortfolioStateImpl;
 
   factory _PortfolioState.fromJson(Map<String, dynamic> json) =
@@ -175,6 +218,8 @@ abstract class _PortfolioState implements PortfolioState {
 
   @override
   List<PortfolioModel> get portfolioList;
+  @override
+  GitHubProfileModel? get githubProfile;
   @override
   bool get isLoading;
   @override

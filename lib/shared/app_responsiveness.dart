@@ -47,4 +47,22 @@ class AppResponsiveness {
             ? size - 5
             : size - 10;
   }
+
+  double headlineSmallFontSize() {
+    const size = 20.0;
+    return isDesktop()
+        ? size
+        : isTablet()
+            ? size - 5
+            : size - 10;
+  }
+
+  double titleLarge() {
+    const size = 30.0;
+    return isDesktop()
+        ? size
+        : isTablet()
+            ? size - 10
+            : size - 20;
+  }
 }

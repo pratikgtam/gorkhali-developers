@@ -15,8 +15,19 @@ class AppTheme {
           fontSize: responsiveNess.headlineMediumFontSize(),
           fontWeight: FontWeight.bold,
         ),
+        headlineSmall: TextStyle(
+          fontSize: responsiveNess.headlineSmallFontSize(),
+          fontWeight: FontWeight.bold,
+        ),
+        titleLarge: TextStyle(
+          fontSize: responsiveNess.titleLarge(),
+          fontWeight: FontWeight.bold,
+        ),
         bodyLarge: TextStyle(
           fontSize: responsiveNess.bodyLargeFontSize(),
+        ),
+        bodyMedium: TextStyle(
+          fontSize: responsiveNess.headlineSmallFontSize(),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(

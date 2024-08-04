@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
 import 'package:pratik_portfolio/features/landing/models/landing_page_items.dart';
+import 'package:pratik_portfolio/navigation/app_router.dart';
 import 'package:pratik_portfolio/shared/app_responsiveness.dart';
 
 class AppNavigationRail extends StatelessWidget {
@@ -29,6 +30,20 @@ class AppNavigationRail extends StatelessWidget {
           context.select((LandingCubit cubit) => cubit.state.landingPage.index),
       onDestinationSelected: (value) {
         context.read<LandingCubit>().changePage(value);
+        switch (value) {
+          case 0:
+            const LandingPageRoute().go(context);
+            break;
+          case 1:
+            const PortfolioRoute().go(context);
+            break;
+          case 2:
+            const MyServicesRoute().go(context);
+            break;
+          case 3:
+            const ContactMeRoute().go(context);
+            break;
+        }
       },
       backgroundColor: Colors.white,
       destinations: destinations,

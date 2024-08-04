@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pratik_portfolio/features/landing/ui/landing_page.dart';
+import 'package:pratik_portfolio/navigation/app_router.dart';
 import 'package:pratik_portfolio/shared/app_theme.dart';
 import 'package:pratik_portfolio/shared/global_providers.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pratik Portfolio',
-      theme: AppTheme.theme(context),
-      home: const GlobalProviders(
-        child: LandingPage(),
+    return GlobalProviders(
+      child: MaterialApp.router(
+        title: 'Pratik Portfolio',
+        theme: AppTheme.theme(context),
+        routerConfig: AppRouter.instance.router,
       ),
     );
   }

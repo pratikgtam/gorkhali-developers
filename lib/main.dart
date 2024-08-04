@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlobalProviders(
       child: MaterialApp.router(
-        title: 'Pratik Portfolio',
+        title: 'Gorkhali Developers',
         theme: AppTheme.theme(context),
         routerConfig: AppRouter.instance.router,
       ),

@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'github_profile_model.freezed.dart';
 part 'github_profile_model.g.dart';
 
+// This is the model for the GitHub profile
+// It will be used to store the GitHub profile data
 @freezed
 class GitHubProfileModel with _$GitHubProfileModel {
   const factory GitHubProfileModel({

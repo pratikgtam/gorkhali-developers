@@ -8,6 +8,7 @@ import 'package:pratik_portfolio/features/landing/ui/landing_page.dart';
 part 'app_router.g.dart';
 part 'app_routes.dart';
 
+// We are using GoRouter for navigation in this app
 class AppRouter {
   AppRouter._()
       : _router = GoRouter(

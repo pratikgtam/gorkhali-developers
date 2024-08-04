@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Reusable button widget
 class AppButton extends StatelessWidget {
   final String text;
   final void Function() onPressed;

@@ -7,6 +7,9 @@ import 'package:pratik_portfolio/features/portfolio/repository/portfolio_reposit
 import 'package:pratik_portfolio/shared/supabase/supabase_repository.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+// GlobalProviders is a widget that provides all the required providers and blocs to the app
+// It is the parent widget of the MaterialApp
+
 class GlobalProviders extends StatelessWidget {
   const GlobalProviders({super.key, required this.child});
   final Widget child;

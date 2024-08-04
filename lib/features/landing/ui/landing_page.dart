@@ -6,6 +6,7 @@ import 'package:pratik_portfolio/shared/app_navigation_rail.dart';
 import 'package:pratik_portfolio/shared/bottom_nav_bar.dart';
 import 'package:pratik_portfolio/shared/constatnts.dart';
 
+// This is the landing page that will be displayed when the user opens the app
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key, required this.currentItem});
   final LandingPageItems currentItem;

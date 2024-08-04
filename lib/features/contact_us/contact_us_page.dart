@@ -3,6 +3,8 @@ import 'package:pratik_portfolio/shared/app_button.dart';
 import 'package:pratik_portfolio/shared/app_navigation_rail.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+// This is the contact us page that will be displayed when the user clicks on the 'Get started now' button
+// Also, the contact us page will be displayed when the user clicks on the 'Contact' button in the navigation rail
 class ContactUsPage extends StatelessWidget {
   const ContactUsPage({super.key});
 
@@ -20,6 +22,7 @@ class ContactUsPage extends StatelessWidget {
           AppButton(
             text: 'Book now',
             onPressed: () {
+              // This will launch the Calendly link in the browser
               launchUrlString('https://calendly.com/pratikgtam/30min');
             },
           ),

@@ -1,5 +1,11 @@
 part of 'app_router.dart';
 
+// We will define all the routes here
+// We will use the TypedGoRoute annotation to define the routes
+// We will also define the path for each route
+// We will also define the build method for each route
+// The build method will return the widget that needs to be displayed for that route
+// This is done for type safety and to avoid any runtime errors
 @TypedGoRoute<LandingPageRoute>(path: LandingPageRoute.path)
 class LandingPageRoute extends GoRouteData {
   const LandingPageRoute();

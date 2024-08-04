@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+// App responsiveness class
+// This class is used to make the app responsive
+// It will be used to make the app responsive for mobile, tablet and desktop
+// It will also be used to set the font size for different screen sizes
+
 class AppResponsiveness {
   final BuildContext context;
   final double _mobileBreakpoint = 650;

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pratik_portfolio/shared/app_responsiveness.dart';
 
+// AppTheme class to define the theme of the app
+// This class will be used to define the theme of the app
+// It will be used to set the text theme and button theme of the app
+// It will also be used to set the font size of the text
+
 class AppTheme {
   static ThemeData theme(BuildContext context) {
     final responsiveNess = AppResponsiveness(context: context);

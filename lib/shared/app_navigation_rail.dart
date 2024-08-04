@@ -4,6 +4,12 @@ import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
 import 'package:pratik_portfolio/features/landing/models/landing_page_items.dart';
 import 'package:pratik_portfolio/navigation/app_router.dart';
 import 'package:pratik_portfolio/shared/app_responsiveness.dart';
+// Navigation rail for the app
+// This will be displayed on the left side of the screen
+// It will contain the icons for the different pages
+// When the user clicks on the icon, the page will change
+// This will be displayed only on the desktop
+// On mobile, the user will use the bottom navigation bar
 
 class AppNavigationRail extends StatelessWidget {
   const AppNavigationRail({

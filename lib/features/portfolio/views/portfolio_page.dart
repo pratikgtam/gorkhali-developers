@@ -5,6 +5,7 @@ import 'package:pratik_portfolio/features/portfolio/views/github_profile.dart';
 import 'package:pratik_portfolio/features/portfolio/views/trusted_by.dart';
 import 'package:pratik_portfolio/shared/app_navigation_rail.dart';
 
+// This is the portfolio page that will be displayed when the user opens the portfolio page
 class PortfolioPage extends StatefulWidget {
   const PortfolioPage({super.key});
 

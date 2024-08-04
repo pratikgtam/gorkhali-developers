@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pratik_portfolio/features/portfolio/cubit/protfolio_cubit.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+// This is the trusted by section in the portfolio page
+
 class TrustedBy extends StatelessWidget {
   const TrustedBy({super.key});
 

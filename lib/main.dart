@@ -7,6 +7,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+// Supabase is a service that provides a backend for this app
+// We are initializing the supabase client here
+
   await Supabase.initialize(
     url: 'https://qtozgrifxyvrydlnhnbe.supabase.co',
     anonKey:

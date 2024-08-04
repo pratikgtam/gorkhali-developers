@@ -3,6 +3,7 @@ import 'package:pratik_portfolio/navigation/app_router.dart';
 import 'package:pratik_portfolio/shared/app_button.dart';
 import 'package:pratik_portfolio/shared/app_navigation_rail.dart';
 
+// This is the home page that will be displayed when the user opens the app
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -45,6 +46,7 @@ class HomePage extends StatelessWidget {
             AppButton(
               text: 'Get started now',
               onPressed: () {
+                // This will navigate to the contact us page
                 const ContactMeRoute().go(context);
               },
             ),

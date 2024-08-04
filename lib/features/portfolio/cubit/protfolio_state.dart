@@ -6,6 +6,7 @@ import 'package:pratik_portfolio/features/portfolio/model/trusted_by_model.dart'
 part 'protfolio_state.freezed.dart';
 part 'protfolio_state.g.dart';
 
+// This is the state for the portfolio page
 @freezed
 class PortfolioState with _$PortfolioState {
   factory PortfolioState({

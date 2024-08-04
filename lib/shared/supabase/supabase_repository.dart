@@ -2,6 +2,7 @@ import 'package:pratik_portfolio/features/portfolio/model/portfolio_model.dart';
 import 'package:pratik_portfolio/features/portfolio/model/trusted_by_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+// This is the supabase repository. It will be used to fetch the data from the supabase
 class SupabaseRepository {
   final SupabaseClient _supabaseClient;
 

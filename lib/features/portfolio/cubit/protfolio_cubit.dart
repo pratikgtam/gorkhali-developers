@@ -4,11 +4,15 @@ import 'package:pratik_portfolio/shared/supabase/supabase_repository.dart';
 
 import 'protfolio_state.dart';
 
+// This is the cubit for the portfolio page
+// It will handle the state of the portfolio page
 class PortfolioCubit extends Cubit<PortfolioState> {
   PortfolioCubit(this.supabaseRepository, this.portfolioRepository)
       : super(PortfolioState());
   final SupabaseRepository supabaseRepository;
   final PortfolioRepository portfolioRepository;
+  // This method will fetch the portfolio, github profile, and trusted clients
+  // We call this method when the user opens the portfolio page
   Future<void> fetch() async {
     _fetchPortfolio();
     _fetchGitHubProfile();

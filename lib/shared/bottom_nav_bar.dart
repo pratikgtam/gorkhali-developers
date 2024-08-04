@@ -5,6 +5,10 @@ import 'package:pratik_portfolio/features/landing/models/landing_page_items.dart
 import 'package:pratik_portfolio/navigation/app_router.dart';
 import 'package:pratik_portfolio/shared/app_responsiveness.dart';
 
+// This is the bottom navigation bar that will be displayed when the user opens the app
+// This will be displayed only on mobile devices
+// On desktop, the user will use the navigation rail
+// When the user clicks on the icon, the page will change
 class AppBottomNavigationBar extends StatelessWidget {
   const AppBottomNavigationBar({
     super.key,

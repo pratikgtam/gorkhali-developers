@@ -4,6 +4,7 @@ import 'package:pratik_portfolio/features/home/home_page.dart';
 import 'package:pratik_portfolio/features/my_services/my_services_page.dart';
 import 'package:pratik_portfolio/features/portfolio/views/portfolio_page.dart';
 
+// Landing page items. It contains the title, page, icon, and selected icon
 enum LandingPageItems {
   home(
     title: "Home",

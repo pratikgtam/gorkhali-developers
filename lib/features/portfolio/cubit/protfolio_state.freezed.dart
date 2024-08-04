@@ -22,6 +22,7 @@ PortfolioState _$PortfolioStateFromJson(Map<String, dynamic> json) {
 mixin _$PortfolioState {
   List<PortfolioModel> get portfolioList => throw _privateConstructorUsedError;
   GitHubProfileModel? get githubProfile => throw _privateConstructorUsedError;
+  List<TrustedByModel> get trustedBy => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,6 +40,7 @@ abstract class $PortfolioStateCopyWith<$Res> {
   $Res call(
       {List<PortfolioModel> portfolioList,
       GitHubProfileModel? githubProfile,
+      List<TrustedByModel> trustedBy,
       bool isLoading});
 
   $GitHubProfileModelCopyWith<$Res>? get githubProfile;
@@ -59,6 +61,7 @@ class _$PortfolioStateCopyWithImpl<$Res, $Val extends PortfolioState>
   $Res call({
     Object? portfolioList = null,
     Object? githubProfile = freezed,
+    Object? trustedBy = null,
     Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
@@ -70,6 +73,10 @@ class _$PortfolioStateCopyWithImpl<$Res, $Val extends PortfolioState>
           ? _value.githubProfile
           : githubProfile // ignore: cast_nullable_to_non_nullable
               as GitHubProfileModel?,
+      trustedBy: null == trustedBy
+          ? _value.trustedBy
+          : trustedBy // ignore: cast_nullable_to_non_nullable
+              as List<TrustedByModel>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -101,6 +108,7 @@ abstract class _$$PortfolioStateImplCopyWith<$Res>
   $Res call(
       {List<PortfolioModel> portfolioList,
       GitHubProfileModel? githubProfile,
+      List<TrustedByModel> trustedBy,
       bool isLoading});
 
   @override
@@ -120,6 +128,7 @@ class __$$PortfolioStateImplCopyWithImpl<$Res>
   $Res call({
     Object? portfolioList = null,
     Object? githubProfile = freezed,
+    Object? trustedBy = null,
     Object? isLoading = null,
   }) {
     return _then(_$PortfolioStateImpl(
@@ -131,6 +140,10 @@ class __$$PortfolioStateImplCopyWithImpl<$Res>
           ? _value.githubProfile
           : githubProfile // ignore: cast_nullable_to_non_nullable
               as GitHubProfileModel?,
+      trustedBy: null == trustedBy
+          ? _value._trustedBy
+          : trustedBy // ignore: cast_nullable_to_non_nullable
+              as List<TrustedByModel>,
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -145,8 +158,10 @@ class _$PortfolioStateImpl implements _PortfolioState {
   _$PortfolioStateImpl(
       {final List<PortfolioModel> portfolioList = const <PortfolioModel>[],
       this.githubProfile,
+      final List<TrustedByModel> trustedBy = const <TrustedByModel>[],
       this.isLoading = false})
-      : _portfolioList = portfolioList;
+      : _portfolioList = portfolioList,
+        _trustedBy = trustedBy;
 
   factory _$PortfolioStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$PortfolioStateImplFromJson(json);
@@ -162,13 +177,22 @@ class _$PortfolioStateImpl implements _PortfolioState {
 
   @override
   final GitHubProfileModel? githubProfile;
+  final List<TrustedByModel> _trustedBy;
+  @override
+  @JsonKey()
+  List<TrustedByModel> get trustedBy {
+    if (_trustedBy is EqualUnmodifiableListView) return _trustedBy;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_trustedBy);
+  }
+
   @override
   @JsonKey()
   final bool isLoading;
 
   @override
   String toString() {
-    return 'PortfolioState(portfolioList: $portfolioList, githubProfile: $githubProfile, isLoading: $isLoading)';
+    return 'PortfolioState(portfolioList: $portfolioList, githubProfile: $githubProfile, trustedBy: $trustedBy, isLoading: $isLoading)';
   }
 
   @override
@@ -180,6 +204,8 @@ class _$PortfolioStateImpl implements _PortfolioState {
                 .equals(other._portfolioList, _portfolioList) &&
             (identical(other.githubProfile, githubProfile) ||
                 other.githubProfile == githubProfile) &&
+            const DeepCollectionEquality()
+                .equals(other._trustedBy, _trustedBy) &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading));
   }
@@ -190,6 +216,7 @@ class _$PortfolioStateImpl implements _PortfolioState {
       runtimeType,
       const DeepCollectionEquality().hash(_portfolioList),
       githubProfile,
+      const DeepCollectionEquality().hash(_trustedBy),
       isLoading);
 
   @JsonKey(ignore: true)
@@ -211,6 +238,7 @@ abstract class _PortfolioState implements PortfolioState {
   factory _PortfolioState(
       {final List<PortfolioModel> portfolioList,
       final GitHubProfileModel? githubProfile,
+      final List<TrustedByModel> trustedBy,
       final bool isLoading}) = _$PortfolioStateImpl;
 
   factory _PortfolioState.fromJson(Map<String, dynamic> json) =
@@ -220,6 +248,8 @@ abstract class _PortfolioState implements PortfolioState {
   List<PortfolioModel> get portfolioList;
   @override
   GitHubProfileModel? get githubProfile;
+  @override
+  List<TrustedByModel> get trustedBy;
   @override
   bool get isLoading;
   @override

@@ -16,6 +16,10 @@ _$PortfolioStateImpl _$$PortfolioStateImplFromJson(Map<String, dynamic> json) =>
           ? null
           : GitHubProfileModel.fromJson(
               json['githubProfile'] as Map<String, dynamic>),
+      trustedBy: (json['trustedBy'] as List<dynamic>?)
+              ?.map((e) => TrustedByModel.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <TrustedByModel>[],
       isLoading: json['isLoading'] as bool? ?? false,
     );
 
@@ -24,5 +28,6 @@ Map<String, dynamic> _$$PortfolioStateImplToJson(
     <String, dynamic>{
       'portfolioList': instance.portfolioList,
       'githubProfile': instance.githubProfile,
+      'trustedBy': instance.trustedBy,
       'isLoading': instance.isLoading,
     };

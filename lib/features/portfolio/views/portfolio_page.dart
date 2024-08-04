@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pratik_portfolio/features/portfolio/cubit/protfolio_cubit.dart';
 import 'package:pratik_portfolio/features/portfolio/views/github_profile.dart';
+import 'package:pratik_portfolio/features/portfolio/views/trusted_by.dart';
 import 'package:pratik_portfolio/shared/app_navigation_rail.dart';
 
 class PortfolioPage extends StatefulWidget {
@@ -26,7 +27,8 @@ class _PortfolioPageState extends State<PortfolioPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GitHubProfileScreen(),
+            const GitHubProfileScreen(),
+            const TrustedBy(),
             const SizedBox(
               height: 30,
             ),

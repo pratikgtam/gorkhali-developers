@@ -12,6 +12,7 @@ class PortfolioCubit extends Cubit<PortfolioState> {
   Future<void> fetch() async {
     _fetchPortfolio();
     _fetchGitHubProfile();
+    _fetchTrustedClients();
   }
 
   Future<void> _fetchPortfolio() async {
@@ -37,6 +38,15 @@ class PortfolioCubit extends Cubit<PortfolioState> {
     try {
       final profile = await portfolioRepository.getGithubRepo();
       emit(state.copyWith(githubProfile: profile));
+    } catch (e) {
+      emit(state);
+    }
+  }
+
+  Future<void> _fetchTrustedClients() async {
+    try {
+      final trustedClients = await supabaseRepository.getTrustedClients();
+      emit(state.copyWith(trustedBy: trustedClients));
     } catch (e) {
       emit(state);
     }

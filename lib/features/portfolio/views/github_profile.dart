@@ -37,7 +37,7 @@ class GitHubProfileScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Center(
                   child: Text(
-                    profile.name ?? profile.login ?? 'Pratik',
+                    profile.name ?? profile.login,
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
@@ -66,13 +66,13 @@ class GitHubProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _buildStatCard('Repositories',
-                        profile.publicRepos.toString() ?? '0', context),
-                    _buildStatCard('Gists',
-                        profile.publicGists.toString() ?? '0', context),
-                    _buildStatCard('Followers',
-                        profile.followers.toString() ?? '0', context),
-                    _buildStatCard('Following',
-                        profile.following.toString() ?? '0', context),
+                        profile.publicRepos.toString(), context),
+                    _buildStatCard(
+                        'Gists', profile.publicGists.toString(), context),
+                    _buildStatCard(
+                        'Followers', profile.followers.toString(), context),
+                    _buildStatCard(
+                        'Following', profile.following.toString(), context),
                   ],
                 ),
                 const SizedBox(height: 30),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pratik_portfolio/features/landing/cubit/landing_cubit.dart';
+import 'package:pratik_portfolio/navigation/app_router.dart';
 import 'package:pratik_portfolio/shared/app_button.dart';
 import 'package:pratik_portfolio/shared/app_navigation_rail.dart';
 
@@ -23,11 +22,11 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             RichText(
               text: TextSpan(
-                text: 'I am ',
+                text: 'We are ',
                 style: Theme.of(context).textTheme.headlineMedium,
                 children: [
                   TextSpan(
-                    text: 'Pratik'.toUpperCase(),
+                    text: 'Gorkhali Developers'.toUpperCase(),
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                           color: Theme.of(context).colorScheme.tertiary,
                         ),
@@ -46,7 +45,7 @@ class HomePage extends StatelessWidget {
             AppButton(
               text: 'Get started now',
               onPressed: () {
-                context.read<LandingCubit>().changePage(3);
+                const ContactMeRoute().go(context);
               },
             ),
           ],
